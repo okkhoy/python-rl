@@ -112,6 +112,10 @@ class sarsa_lambda(skeleton_agent):
         self.traces = numpy.zeros(self.weights.shape)
         self.init_stepsize(self.weights.shape, self.params)
 
+        print self.weights
+        print self.traces
+        print self.basis.getNumBasisFunctions()
+
         self.lastAction=Action()
         self.lastObservation=Observation()
 
@@ -226,6 +230,9 @@ class sarsa_lambda(skeleton_agent):
 
         self.lastAction=copy.deepcopy(returnAction)
         self.lastObservation=copy.deepcopy(observation)
+        print "state: ", newState, "   last state: ", lastState, " last action:  ", lastAction
+
+
         return returnAction
 
 
